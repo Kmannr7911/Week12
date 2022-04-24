@@ -12,3 +12,9 @@ button{
 .col{
     text-align: 10px, 20px;
 }
+Log Line{
+    width: 10px;
+    height: auto;
+    background-color: white;
+    color: gray;
+}
