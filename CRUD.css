@@ -1,0 +1,14 @@
+body{
+    background-color: burlywood;
+    font-style: normal;
+}
+
+button{
+    width: 120px;
+    height: 120px;
+    box-sizing: 25px;
+}
+
+.col{
+    text-align: 10px, 20px;
+}

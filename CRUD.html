@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinyl Records Collection</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<div class="container">
+
+<h1>Vinyl Record Collection</h1>
+<body class="container">
+    <table id="Vinyl Record Collection Log" class="table order-list">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Artist</td>
+                <td>Category</td>
+                <td> Track List</td>
+                <td>Record Label</td>
+                <td>Year</td>
+                <td>Favorite</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="col-med-2">
+                    <input type="text" name="Name" class="form-control">
+                </td>
+                <td class="col-med-2">
+                    <input type="text" name="Artist" class="form-control">
+                </td>
+                <td class="col-med-2">
+                    <input type="text" name="Category" class="form-control">
+                </td>
+                <td class="col-med-2">
+                    <input type="text" name="Track List" class="form-control">
+                </td>
+                <td class="col-med-2">
+                    <input type="text" name="Record Label" class="form-control">
+                </td>
+                <td class="col-med-2">
+                    <input type="text" name="Year" class="form-control">
+                </td>
+                <td class="col-med-2">
+                    <input type="text" name="Favorite" class="form-control">
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="7" style="text-align: left;">
+                <input type="button" class="btn btn-med btn block" id="addrow" value="Add Row">
+                <input type="button" class="btn btn-med btn block" id="updaterow" value="Update">
+                <input type="button" class="btn btn-med btn block" id="deleterow" value="Delete">
+                </td>
+            </tr>
+            <tr></tr>
+        </tfoot>
+    </table>
+</div>
+
+<script>
+
+$(document).ready(function(){
+    var counter = 0;
+
+    $("#addrow").on("click", function(){
+        var newRow = $("<tr>"); 
+        var cols = "";
+
+        cols += '<td><input type = "text" class = "form-control" name="Name' + counter + '"/></td>';
+        cols += '<td><input type = "text" class= "form-control" name="Artist' + counter + '"/></td>';
+        cols += '<td><input type = "text" class= "form-control" name= "Category' + counter + '"/></td>';
+        cols += '<td><input type = "text" class= "form-control" name= "Record Label' + counter + '"/></td>';
+        cols += '<td><input type = "text" class= "form-control" name= "Year' + counter + '"/></td>';
+        cols += '<td><input type = "text" class= "form-control" name= "Favorite' + counter + '" /></td>';
+        
+
+        newRow.append(cols);
+        $("table.order-list").append(newRow);
+        counter++;
+    });
+
+    $("table.order-list").on("click","ibnDel", function(){
+        $(this).closest("tr").remove();
+        counter-= 1
+    });
+
+});
+
+</script>
+</body>
+</html>
